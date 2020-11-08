@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    min-height: 768px;
+    max-height: 100vh;
+    min-width: 1366px;
+    font-family: 'Roboto', sans-serif;
+    background-image: url(img/tlo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    margin: 5px;
+}
+
+.wall {
+    display: grid;
+    border: 1px solid black;
+    background-color: rgba(255, 0, 0, .5);
+    width: 1366px;
+    height: 768px;
+    min-height: 768px;
+    min-width: 1366px;
+    grid-template-columns: 190px 1fr 1fr 190px;
+    grid-template-rows: 150px 1fr 1fr 100px;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header header header header"
+        "ads ads ads ads"
+        "ads ads ads ads"
+        "footer footer footer footer";
+}
+
+
+.header {
+    grid-area: header;
+    text-align: center;
+}
+
+.ads {
+    grid-area: ads;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    flex-wrap: wrap;
+}
+
+.footer {
+    grid-area: footer;
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "player1 www player2"
+        "player1 . player2";
+}
+
+.player1 {
+    grid-area: player1;
+}
+
+.player2 {
+    grid-area: player2;
+}
+
+.www {
+    grid-area: www;
+    display: flex;
+    background-color: #037CC1;
+    justify-content: space-around;
+    align-items: space-between;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.3rem;
+    border-radius: 20px;
+}
+
+.www p {
+    line-height: 40px;
+}
+
+.header img {
+    height: 100%;
+    text-align: center;
+}
+
+.big,
+.medium,
+.small {
+    display: flex;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 5%;
+    justify-content: center;
+    align-items: center;
+    transition: .6s;
+}
+
+.big:hover,
+.medium:hover,
+.small:hover {
+    transform: scale(2);
+    border: 1px solid black;
+}
+
+.big {
+    width: 200px;
+    height: 90px;
+    padding: 5px;
+}
+
+.big a,
+.medium a,
+.small a {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.medium {
+    width: 128px;
+    height: 60px;
+    padding: 5px;
+}
+
+.small {
+    width: 6.98%;
+    height: 50px;
+    padding: 3px;
+}
+
+.big img,
+.medium img,
+.small img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.player1 img,
+.player2 img {
+    position: absolute;
+    top: 0;
+    height: 100%;
+}
+
+.player2 img {
+    right: 0;
+    transform: rotateY(180deg);
+}
+
+.created {
+    width: 1366px;
+    color: white;
+    text-align: center;
+    padding-right: 15px;
+}
+
+.created a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: white;
+}
+
+.created a:visited {
+    color: white;
+}
+
+.created a:hover {
+    color: yellowgreen;
+}
+
+.www a {
+    text-decoration: none;
+    color: white;
+}
+
+.www a:visited {
+    color: white;
+}
+
+.www a:hover {
+    color: yellowgreen;
+}
+
+
+
+.wall .ball img {
+    position: absolute;
+    top: 68px;
+    left: 60px;
+    height: 22px;
+    width: auto;
+    animation: move 2s linear infinite alternate;
+}
+
+@keyframes move {
+    100% {
+        left: 1280px;
+        transform: rotate(600deg);
+    }
+}
