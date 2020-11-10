@@ -46,8 +46,8 @@ header img {
 }
 
 .wallwrap {
-    background-color: rgba(255, 0, 0, .4);
-    /* background-color: rgba(3, 124, 193, .5); */
+    /* background-color: rgba(255, 0, 0, .4); */
+    background-color: rgba(3, 124, 193, .5);
     width: 100%;
     width: 360px;
     min-width: 360px;
